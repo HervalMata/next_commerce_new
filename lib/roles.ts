@@ -6,11 +6,11 @@ export function homePathForRole(
 ): string {
     switch (role) {
         case 'ADMIN':
-            return '/admin/dashboard';
+            return '/admin/login';
         case 'VENDOR':
-            return vendorStatus === "APPROVED" ? '/vendor/dashboard/' : "/vendor/pending";
+            return vendorStatus === "APPROVED" ? '/vendor/login/' : "/vendor/pending";
         case "CUSTOMER":
-            return '/dashboard';
+            return '/login';
         default:
             return '/login';
     }

@@ -211,7 +211,7 @@ export async function updateProfile(
         return { error:  "Could not update profile" }
     }
 
-    revalidatePath("/dashboard")
+    revalidatePath("/login")
     return {}
 }
 

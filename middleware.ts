@@ -16,12 +16,12 @@ export default auth((req) => {
     const to = (p: string) => NextResponse.redirect(new URL(p, nextUrl));
     const home = () => to(homePathForRole(role, vendorStatus));
 
-    if (path.startsWith("/dashboard")) {
+    if (path.startsWith("/login")) {
         if (!isLoggedIn) return to("/login")
         if (role !== "CUSTOMER") return home()
     }
 
-    if (path.startsWith("/vendor/dashboard")) {
+    if (path.startsWith("/vendor/login")) {
         if (!isLoggedIn) return to("/vendor/login")
         if (role !== "VENDOR") return home()
         if (vendorStatus === "APPROVED") return to("/vendor/pending")
@@ -30,7 +30,7 @@ export default auth((req) => {
     if (path === "/vendor/pending") {
         if (!isLoggedIn) return to("/vendor/login")
         if (role !== "VENDOR") return home()
-        if (vendorStatus === "APPROVED") return to("/vendor/dashboard")
+        if (vendorStatus === "APPROVED") return to("/vendor/login")
     }
 
     if (path.startsWith("/admin") && path !== "/admin/login") {
@@ -42,5 +42,5 @@ export default auth((req) => {
 })
 
 export const config = {
-    matcher: ["/dashboard", "/vendor/:path", "/admin/:path"]
+    matcher: ["/login", "/vendor/:path", "/admin/:path"]
 }
