@@ -16,7 +16,7 @@ export default auth((req) => {
     const to = (p: string) => NextResponse.redirect(new URL(p, nextUrl));
     const home = () => to(homePathForRole(role, vendorStatus));
 
-    if (path.startsWith("/login")) {
+    if (path.startsWith("/dashboard")) {
         if (!isLoggedIn) return to("/login")
         if (role !== "CUSTOMER") return home()
     }

@@ -112,7 +112,7 @@ export async function registerVendor(
     }
 
     const passwordHash = await bcrypt.hash(password, 12)
-    const slug = await slugify(storeName)
+    const slug = slugify(storeName)
 
     try {
         await prisma.$transaction(async (tx) => {
