@@ -6,9 +6,9 @@ export function homePathForRole(
 ): string {
     switch (role) {
         case 'ADMIN':
-            return '/admin/login';
+            return '/admin/dashboard';
         case 'VENDOR':
-            return vendorStatus === "APPROVED" ? '/vendor/login/' : "/vendor/pending";
+            return vendorStatus === "APPROVED" ? '/vendor/dashboard' : "/vendor/pending";
         case "CUSTOMER":
             return '/login';
         default:
