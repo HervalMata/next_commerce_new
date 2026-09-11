@@ -40,14 +40,14 @@ export function CustomerLoginForm() {
                     name="remember"
                     className="font-sans text-[13px] font-medium text-ink-soft"
                 />
-                <span>Lembrar-me</span>
+                <span className="font-sans text-[13px] font-medium text-muted">Lembrar-me</span>
             </label>
             <SubmitButton pending={pending}>
                 {pending ? "Entrando..." : "Entrar"}
             </SubmitButton>
-            <p className="mt-7 text-center font-sans text-[13.5px] text-muted">
+            <p className="mt-7 text-center font-sans text-[13.5px] text-ink-soft">
                 Não tem uma conta?{" "}
-                <Link href="/registrar" className="font-semibold text-pink-500 hover:text-pink-600">
+                <Link href="/register" className="font-semibold text-pink-500 hover:text-pink-600">
                     Cadastrar
                 </Link>
             </p>
