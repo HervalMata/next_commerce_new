@@ -24,7 +24,7 @@ export default auth((req) => {
     if (path.startsWith("/vendor/dashboard")) {
         if (!isLoggedIn) return to("/vendor/login")
         if (role !== "VENDOR") return home()
-        if (vendorStatus === "APPROVED") return to("/vendor/pending")
+        if (vendorStatus === "APPROVED") return to("/vendor/dashboard")
     }
 
     if (path === "/vendor/pending") {

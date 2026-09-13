@@ -58,7 +58,7 @@ export default async function CustomerDashboardPage() {
 
             <main className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-start gap-6 px-6 pt-5
                            lg:grid-cols-[300px_1fr] lg:px-10">
-                <AccountSidebar />
+                <AccountSidebar name={fullName || "Sua conta"} email={email} />
                 <div className="min-h-160 rounded-2xl border border-line-soft bg-surface p-6 shadow-xs sm:p-[32px_36px_40px]">
                     <StateProvider>
                         <div className="mb-2 flex items-center justify-between">
@@ -89,7 +89,7 @@ export default async function CustomerDashboardPage() {
                             }}
                         >
                             <div className="pt-5">
-                                <CustomerProfileForm />
+                                <CustomerProfileForm firstName={firstName} lastName={lasstName} email={email} phone={phone} />
                             </div>
                         </StateView>
                     </StateProvider>
