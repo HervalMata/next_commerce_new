@@ -42,7 +42,7 @@ export default function CustomerRegisterForm() {
                 <PasswordField
                     label="Senha"
                     name="password"
-                    placeholder="Digite seu senha"
+                    placeholder="Digite sua senha"
                     autoComplete="current-password"
                     error={state?.fieldErrors?.password}
                 />
