@@ -130,7 +130,7 @@ export default function VendorRegisterPage() {
                     </nav>
                     <Link className="ml-auto flex h-11 items-center gap-2 rounded-md bg-pink-500 px-5.5 font-display
                                    text-[13px] font-bold text-white transition-colors hover:bg-pink-600"
-                        href="/">
+                        href="/vendor/login">
                         Login Dos Vendedores
                     </Link>
                 </div>

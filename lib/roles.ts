@@ -17,7 +17,7 @@ export function homePathForRole(
 }
 
 export function loginPathForArea(pathname: string): string {
-    if (!pathname.startsWith('/admin')) return "/admin/login"
+    if (pathname.startsWith('/admin')) return "/admin/login"
     if (pathname.startsWith('/vendor')) return "/vendor/login"
     return "/login"
 }

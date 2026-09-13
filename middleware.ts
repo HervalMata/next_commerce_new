@@ -21,7 +21,7 @@ export default auth((req) => {
         if (role !== "CUSTOMER") return home()
     }
 
-    if (path.startsWith("/vendor/login")) {
+    if (path.startsWith("/vendor/dashboard")) {
         if (!isLoggedIn) return to("/vendor/login")
         if (role !== "VENDOR") return home()
         if (vendorStatus === "APPROVED") return to("/vendor/pending")
@@ -30,7 +30,7 @@ export default auth((req) => {
     if (path === "/vendor/pending") {
         if (!isLoggedIn) return to("/vendor/login")
         if (role !== "VENDOR") return home()
-        if (vendorStatus === "APPROVED") return to("/vendor/login")
+        if (vendorStatus === "APPROVED") return to("/vendor/dashboard")
     }
 
     if (path.startsWith("/admin") && path !== "/admin/login") {
@@ -42,5 +42,5 @@ export default auth((req) => {
 })
 
 export const config = {
-    matcher: ["/login", "/vendor/:path", "/admin/:path"]
+    matcher: ["/dashboard/:path", "/vendor/:path", "/admin/:path"]
 }

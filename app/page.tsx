@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {auth} from "@/auth";
 import {homePathForRole, loginPathForArea} from "@/lib/roles";
 import Link from "next/link";
@@ -14,7 +13,7 @@ export default async function Home() {
       <header className="border-b border-line-soft bg-surface">
         <div className="mx-auto flex h-20 max-w-310 items-center px-8">
           <span className="font-display text-[27px] font-extrabold tracking-[-0.02em] text-ink">
-            Cris <span className="text-iris-500">Laços</span>
+            Cris <span className="text-pink-500">Laços</span>
           </span>
           <div className="ml-auto flex items-center gap-3">
             {session?.user ? (
