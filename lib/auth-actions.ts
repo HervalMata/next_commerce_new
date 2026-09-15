@@ -3,7 +3,7 @@
 import {prisma} from "@/lib/prisma";
 import {customerRegisterSchema, loginSchema, updateProfileSchema, vendorRegisterSchema} from "@/lib/validation";
 import bcrypt from "bcryptjs";
-import {Prisma} from "@prisma/client";
+import {Prisma} from "@/app/generated/prisma";
 import {redirect} from "next/navigation";
 import {auth, signIn, signOut} from "@/auth";
 import {AuthError} from "next-auth";

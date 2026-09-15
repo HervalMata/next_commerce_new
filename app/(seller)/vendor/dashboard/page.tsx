@@ -64,8 +64,8 @@ export default async function VendorDashboardPage() {
     // const user = session!.user ?? ""
     const user = { id: "1", name: "Vendedor", email: "vendedor@crislacos.com", vendorStatus: "PENDING" }
 
-    if (user.vendorStatus === "APPROVED") {
-        redirect("/vendor/dashboard")
+    if (user.vendorStatus !== "APPROVED") {
+        redirect("/vendor/pending")
     }
 
     const firstName = user.name?.split(" ")[0] ?? "Vendedor"

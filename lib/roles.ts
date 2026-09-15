@@ -10,7 +10,7 @@ export function homePathForRole(
         case 'VENDOR':
             return vendorStatus === "APPROVED" ? '/vendor/dashboard' : "/vendor/pending";
         case "CUSTOMER":
-            return '/login';
+            return '/dashboard';
         default:
             return '/login';
     }
